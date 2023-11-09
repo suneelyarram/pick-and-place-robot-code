@@ -1,0 +1,58 @@
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+
+int servo1Pin = 9;  // Connect servo 1 to digital pin 9
+int servo2Pin = 10; // Connect servo 2 to digital pin 10
+int servo3Pin = 11; // Connect servo 3 to digital pin 11
+
+void setup() {
+  servo1.attach(servo1Pin);
+  servo2.attach(servo2Pin);
+  servo3.attach(servo3Pin);
+}
+
+void loop() {
+  for (int angle = 0; angle <= 180; angle++)
+  {
+    servo1.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+  
+  delay(1000); // Pause between servos
+  
+  for (int angle = 0; angle <= 180; angle++)
+  {
+    servo2.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+  
+  delay(1000); // Pause between servos
+  
+  for (int angle = 0; angle <= 180; angle++)
+  {
+    servo3.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+
+  for (int angle = 180; angle >= 0; angle--)
+  {
+    servo1.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+  
+  for (int angle = 180; angle >= 0; angle--)
+  {
+    servo2.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+
+  for (int angle = 180; angle >= 0; angle--)
+  {
+    servo3.write(angle);
+    delay(15); // Adjust the delay to control the speed of movement
+  }
+  delay(1000); // Pause between servos
+}
